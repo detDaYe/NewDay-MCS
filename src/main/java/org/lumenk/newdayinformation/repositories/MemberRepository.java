@@ -25,4 +25,12 @@ public class MemberRepository {
     public void putMember(@NotNull NewDayMember member){
         members.put(member.getPlayerUUID(), member);
     }
+
+    public void save(){
+
+    }
+
+    public void load(){
+
+    }
 }
