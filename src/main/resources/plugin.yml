@@ -1,0 +1,5 @@
+name: NewDayInformation
+version: '${version}'
+main: org.lumenk.newdayinformation.NewDayInformation
+api-version: 1.18
+authors: [ SeHyeonBak ]
