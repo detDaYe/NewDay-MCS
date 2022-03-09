@@ -3,6 +3,7 @@ package org.lumenk.newdayinformation.repositories;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
+import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.lumenk.newdayinformation.objects.NewDayMember;
@@ -52,6 +53,7 @@ public class MemberRepository {
         NewDayMember[] members = memberList.toArray(new NewDayMember[0]);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(members);
+        //Bukkit.getLogger().info(json);
         try {
             Files.writeString(Path.of(FILE_PATH), json, StandardOpenOption.CREATE);
         } catch (IOException e) {
