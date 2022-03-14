@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.lumenk.newdayinformation.listeners.ChatListener;
 import org.lumenk.newdayinformation.listeners.MOTDListener;
 import org.lumenk.newdayinformation.listeners.PlayerJoinListener;
 import org.lumenk.newdayinformation.objects.NewDayMember;
@@ -32,6 +33,7 @@ public final class NewDayInformation extends JavaPlugin {
         final PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new PlayerJoinListener(), this);
         pm.registerEvents(new MOTDListener(), this);
+        pm.registerEvents(new ChatListener(), this);
 
         MemberRepository.load();
         MemberRepository.putMember(dementer);
