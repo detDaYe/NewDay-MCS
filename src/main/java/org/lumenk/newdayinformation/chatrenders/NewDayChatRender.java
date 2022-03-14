@@ -31,7 +31,7 @@ public class NewDayChatRender implements ChatRenderer {
 
         return Component.text("<")
                 .append(Component.text(member.getOrder()))
-                .append(Component.text("기>"))
+                .append(Component.text("기> "))
                 .append(Component.text(player.getName()).hoverEvent(HoverEvent.showText(Component.text(member.getName()))))
                 .append(Component.text(" : "))
                 .append(Component.text(originText));
