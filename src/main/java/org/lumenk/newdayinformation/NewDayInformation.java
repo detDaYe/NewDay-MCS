@@ -1,5 +1,6 @@
 package org.lumenk.newdayinformation;
 
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,6 +13,7 @@ import java.util.UUID;
 
 public final class NewDayInformation extends JavaPlugin {
 
+    @Getter
     private static final NewDayMember dementer = NewDayMember.builder()
             .name("박세현")
             .playerUUID(UUID.fromString("fc88a056-0e73-409c-a4b2-adb3d72281fd"))
