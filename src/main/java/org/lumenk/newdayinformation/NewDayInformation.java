@@ -4,12 +4,15 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.lumenk.newdayinformation.commands.NewDayInfoCommand;
 import org.lumenk.newdayinformation.listeners.ChatListener;
 import org.lumenk.newdayinformation.listeners.MOTDListener;
 import org.lumenk.newdayinformation.listeners.PlayerJoinListener;
 import org.lumenk.newdayinformation.objects.NewDayMember;
 import org.lumenk.newdayinformation.repositories.MemberRepository;
+import org.lumenk.newdayinformation.tabcompleter.NewDayInfoCompleter;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public final class NewDayInformation extends JavaPlugin {
@@ -37,6 +40,9 @@ public final class NewDayInformation extends JavaPlugin {
 
         MemberRepository.load();
         MemberRepository.putMember(dementer);
+
+        Objects.requireNonNull(getCommand("newinfo")).setExecutor(new NewDayInfoCommand());
+        Objects.requireNonNull(getCommand("newinfo")).setTabCompleter(new NewDayInfoCompleter());
 
 
 
