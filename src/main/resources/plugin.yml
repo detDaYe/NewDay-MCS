@@ -3,3 +3,6 @@ version: '${version}'
 main: org.lumenk.newdayinformation.NewDayInformation
 api-version: 1.18
 authors: [ SeHyeonBak ]
+commands:
+  newinfo:
+    permission: newday.engineer
